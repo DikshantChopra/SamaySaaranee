@@ -1,0 +1,99 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'project.css' %}">
+    <!-- Font Awesome -->
+<link
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+ rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+ href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+ rel="stylesheet"/>
+<!-- MDB -->
+<link
+ href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css"
+ rel="stylesheet"/>  
+       <title> {% block title %}{% endblock title %} | samay-saaranee</title>   
+      </head>
+     <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">SAMAY-SAARANEE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">Contact-Us</a>
+            </li>
+            <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-mdb-toggle="dropdown" aria-expanded="false">
+                            Profile
+                        </a>
+                        <!-- Dropdown menu -->
+                        <ul class="dropdown-menu mt-" aria-labelledby="navbarDropdown">
+                           <li><p class="dropdown-item" href="#">Welcome To Your TimeTable</p></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                             <li class="text-center fs-6">
+                                <a class="dropdown-item" href="{% url 'login' %}">
+                                    <span class="d-flex align-items-center justify-content-center">
+                                        <i class="ri-login-box-line me-2"></i>
+                                        Login
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="text-center fs-6">
+                                <a class="dropdown-item" href="{% url 'register' %}">
+                                    <span class="d-flex align-items-center justify-content-center">
+                                        <i class="ri-account-box-line me-2"></i>
+                                        Sign-Up
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+  <div>
+   {% block imgnav %}{% endblock imgnav %}
+  </div>
+  <section>
+   <div>
+     {% block body %}{% endblock body %}
+   <div>
+  </section>  
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"
+></script>
+</body>
+</html>
